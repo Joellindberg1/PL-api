@@ -1,15 +1,28 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+model Team {
+  id                      Int      @id @default(autoincrement())
+  name                    String   @unique
+  arena                   String
+  arenaCapacity           Int
+  city                    String
+  manager                 String
+  premierleagueTitles     Int
+  faCupTitles             Int
+  marathonTablePlacement  Int
+  marathonTablePoints     Int
+  recordGoalscorer        String
+  recordGoals             Int
+  homeshirtsColor         String
+  awayshirtsColor         String
+  clubStarted             DateTime
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
 }
