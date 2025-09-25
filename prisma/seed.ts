@@ -5,10 +5,10 @@ import { teams } from "./seed-data/teams";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🧹 Rensar tabellen team...");
+  console.log("Rensar tabellen team...");
   await prisma.team.deleteMany();
 
-  console.log("📝 Skapar team (bulk)...");
+  console.log("Skapar team (bulk)...");
   await prisma.team.createMany({
     data: teams.map(t => ({
       name: t.name,
@@ -28,7 +28,7 @@ async function main() {
     }))
   });
 
-  console.log("✅ Seed klar!");
+  console.log("Seed klar!");
 }
 
 main()
