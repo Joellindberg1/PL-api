@@ -1,7 +1,7 @@
 export const apiInfo = {
   api: {
     name: "Premier League API",
-    Hur: "Nedan finnder du information om API:et och hur du navigerar dig mellan de olika endpointsen!",
+    Hur: "Nedan finnder du information om API:et och hur du navigering för API:et!",
     version: "1.0.0",
     description: "API för Premier League data"
   },
@@ -20,6 +20,11 @@ export const apiInfo = {
         url: "/api/teams/{id}",
         method: "GET",
         description: "Hämta specifikt lag"
+      },
+      teamid: {
+        url: "/api/teams/list",
+        method: "GET",
+        description: "Hämtar alla lagen tillsammans med endast id för en mer kompakt vy."
       }
     },
     health: {
