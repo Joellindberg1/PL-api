@@ -14,6 +14,9 @@ export type TeamSeed = {
   homeshirtsColor: string;
   awayshirtsColor: string;
   clubStarted: string; // YYYY-MM-DD
+  lastPromotionYear: number | null; // År när laget senast blev uppflyttat (null = aldrig nedflyttat)
+  lastPromotionSeason: string | null; // Säsong när laget senast blev uppflyttat (ex: "25/26")
+  isFoundingMember: boolean; // True = varit med från Premier League start 1992
 };
 
 export const teams: TeamSeed[] = [
@@ -31,7 +34,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 228,
     homeshirtsColor: "Red",
     awayshirtsColor: "White",
-    clubStarted: "1886-01-01"
+    clubStarted: "1886-01-01",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "Aston Villa",
@@ -47,7 +53,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 244,
     homeshirtsColor: "Claret & Blue",
     awayshirtsColor: "White",
-    clubStarted: "1874-01-01"
+    clubStarted: "1874-01-01",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "AFC Bournemouth",
@@ -63,7 +72,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 197,
     homeshirtsColor: "Red & Black",
     awayshirtsColor: "White",
-    clubStarted: "1899-01-01"
+    clubStarted: "1899-01-01",
+    lastPromotionYear: 2022,
+    lastPromotionSeason: "22/23",
+    isFoundingMember: false
   },
   {
     name: "Brentford",
@@ -79,7 +91,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 163,
     homeshirtsColor: "Red & White",
     awayshirtsColor: "Black",
-    clubStarted: "1889-01-01"
+    clubStarted: "1889-01-01",
+    lastPromotionYear: 2021,
+    lastPromotionSeason: "21/22",
+    isFoundingMember: false
   },
   {
     name: "Brighton & Hove Albion",
@@ -95,7 +110,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 123,
     homeshirtsColor: "Blue & White",
     awayshirtsColor: "Yellow",
-    clubStarted: "1901-01-01"
+    clubStarted: "1901-01-01",
+    lastPromotionYear: 2017,
+    lastPromotionSeason: "17/18",
+    isFoundingMember: false
   },
   {
     name: "Burnley",
@@ -111,7 +129,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 188,
     homeshirtsColor: "Claret & Blue",
     awayshirtsColor: "White",
-    clubStarted: "1882-01-01"
+    clubStarted: "1882-01-01",
+    lastPromotionYear: 2025,
+    lastPromotionSeason: "25/26",
+    isFoundingMember: false
   },
   {
     name: "Chelsea",
@@ -127,7 +148,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 211,
     homeshirtsColor: "Blue",
     awayshirtsColor: "White",
-    clubStarted: "1905-03-10"
+    clubStarted: "1905-03-10",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "Crystal Palace",
@@ -143,7 +167,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 165,
     homeshirtsColor: "Red & Blue",
     awayshirtsColor: "White",
-    clubStarted: "1905-01-01"
+    clubStarted: "1905-01-01",
+    lastPromotionYear: 2013,
+    lastPromotionSeason: "13/14",
+    isFoundingMember: false
   },
   {
     name: "Everton",
@@ -159,7 +186,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 383,
     homeshirtsColor: "Blue",
     awayshirtsColor: "White",
-    clubStarted: "1878-01-01"
+    clubStarted: "1878-01-01",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "Fulham",
@@ -175,7 +205,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 178,
     homeshirtsColor: "White",
     awayshirtsColor: "Black",
-    clubStarted: "1879-01-01"
+    clubStarted: "1879-01-01",
+    lastPromotionYear: 2022,
+    lastPromotionSeason: "22/23",
+    isFoundingMember: false
   },
   {
     name: "Leeds United",
@@ -191,7 +224,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 238,
     homeshirtsColor: "White",
     awayshirtsColor: "Yellow",
-    clubStarted: "1919-10-17"
+    clubStarted: "1919-10-17",
+    lastPromotionYear: 2025,
+    lastPromotionSeason: "25/26",
+    isFoundingMember: false
   },
   {
     name: "Liverpool",
@@ -207,7 +243,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 346,
     homeshirtsColor: "Red",
     awayshirtsColor: "White",
-    clubStarted: "1892-06-03"
+    clubStarted: "1892-06-03",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "Manchester City",
@@ -223,7 +262,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 260,
     homeshirtsColor: "Sky Blue",
     awayshirtsColor: "White",
-    clubStarted: "1880-01-01"
+    clubStarted: "1880-01-01",
+    lastPromotionYear: 2002,
+    lastPromotionSeason: "02/03",
+    isFoundingMember: false
   },
   {
     name: "Manchester United",
@@ -239,7 +281,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 253,
     homeshirtsColor: "Red",
     awayshirtsColor: "White",
-    clubStarted: "1878-01-01"
+    clubStarted: "1878-01-01",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "Newcastle United",
@@ -255,7 +300,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 206,
     homeshirtsColor: "Black & White",
     awayshirtsColor: "Blue",
-    clubStarted: "1892-12-09"
+    clubStarted: "1892-12-09",
+    lastPromotionYear: 2017,
+    lastPromotionSeason: "17/18",
+    isFoundingMember: false
   },
   {
     name: "Nottingham Forest",
@@ -271,7 +319,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 217,
     homeshirtsColor: "Red",
     awayshirtsColor: "White",
-    clubStarted: "1865-01-01"
+    clubStarted: "1865-01-01",
+    lastPromotionYear: 2022,
+    lastPromotionSeason: "22/23",
+    isFoundingMember: false
   },
   {
     name: "Sunderland",
@@ -287,7 +338,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 228,
     homeshirtsColor: "Red & White",
     awayshirtsColor: "Black",
-    clubStarted: "1879-01-01"
+    clubStarted: "1879-01-01",
+    lastPromotionYear: 2025,
+    lastPromotionSeason: "25/26",
+    isFoundingMember: false
   },
   {
     name: "Tottenham Hotspur",
@@ -303,7 +357,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 280,
     homeshirtsColor: "White",
     awayshirtsColor: "Navy",
-    clubStarted: "1882-01-01"
+    clubStarted: "1882-01-01",
+    lastPromotionYear: null,
+    lastPromotionSeason: null,
+    isFoundingMember: true
   },
   {
     name: "West Ham United",
@@ -319,7 +376,10 @@ export const teams: TeamSeed[] = [
     recordGoals: 326,
     homeshirtsColor: "Claret & Blue",
     awayshirtsColor: "White",
-    clubStarted: "1895-01-01"
+    clubStarted: "1895-01-01",
+    lastPromotionYear: 2012,
+    lastPromotionSeason: "12/13",
+    isFoundingMember: false
   },
   {
     name: "Wolverhampton Wanderers",
@@ -335,6 +395,9 @@ export const teams: TeamSeed[] = [
     recordGoals: 306,
     homeshirtsColor: "Gold",
     awayshirtsColor: "Black",
-    clubStarted: "1877-01-01"
+    clubStarted: "1877-01-01",
+    lastPromotionYear: 2018,
+    lastPromotionSeason: "18/19",
+    isFoundingMember: false
   }
 ];
