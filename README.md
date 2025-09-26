@@ -95,14 +95,16 @@ PL-api/
 ├── src/                   # Källkod
 │   ├── app/              # Express app konfiguration
 │   │   ├── app.ts        # Huvudapp setup
-│   │   ├── server.ts     # Server startup
+│   │   ├── server.ts     # Server startup (entry point)
 │   │   └── middleware/   # Custom middleware
 │   ├── features/         # Feature-baserade moduler
 │   │   ├── teams/        # Team-relaterad funktionalitet
 │   │   └── metadata/     # Metadata och statistik
 │   ├── lib/             # Delade bibliotek
-│   ├── shared/          # Delade typer och utilities
-│   └── index.ts         # Application entry point
+│   │   ├── apiInfo.ts   # API dokumentation
+│   │   └── database.ts  # Databas konfiguration
+│   └── shared/          # Delade typer och utilities
+│       └── errors.ts    # Felhantering
 ├── package.json         # NPM dependencies och scripts
 ├── tsconfig.json       # TypeScript konfiguration
 ├── .env                # Miljövariabler (skapas av dig)
