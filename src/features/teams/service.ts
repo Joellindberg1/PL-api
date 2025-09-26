@@ -1,23 +1,23 @@
-import { TeamRepository } from './repo';
+import { TeamQueries } from './queries';
 import { NotFoundError } from '@/shared/errors';
 
 export class TeamService {
-  private teamRepo: TeamRepository;
+  private teamQueries: TeamQueries;
 
   constructor() {
-    this.teamRepo = new TeamRepository();
+    this.teamQueries = new TeamQueries();
   }
 
   async getAllTeams() {
-    return await this.teamRepo.findAll();
+    return await this.teamQueries.findAll();
   }
 
   async getTeamsList() {
-    return await this.teamRepo.findAllMinimal();
+    return await this.teamQueries.findAllMinimal();
   }
 
   async getTeamById(id: number) {
-    const team = await this.teamRepo.findById(id);
+    const team = await this.teamQueries.findById(id);
     if (!team) {
       throw new NotFoundError('Team', id);
     }
