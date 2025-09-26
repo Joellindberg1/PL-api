@@ -24,7 +24,10 @@ async function main() {
       recordGoals: t.recordGoals,
       homeshirtsColor: t.homeshirtsColor,
       awayshirtsColor: t.awayshirtsColor,
-      clubStarted: new Date(t.clubStarted)
+      clubStarted: new Date(t.clubStarted),
+      lastPromotionYear: t.lastPromotionYear,
+      lastPromotionSeason: t.lastPromotionSeason,
+      isFoundingMember: t.isFoundingMember
     }))
   });
 
