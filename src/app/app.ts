@@ -15,10 +15,14 @@ export const createApp = () => {
   app.use(express.json());
 
   // API Documentation endpoints
-  app.get("/", (_req, res) => {
+  const apiDocsHandler = (_req: any, res: any) => {
     const apiData = getApiInfo();
     res.json(apiData);
-  });
+  };
+  
+  app.get("/", apiDocsHandler);
+  app.get("/pl-api", apiDocsHandler);
+  app.get("/pl-api/", apiDocsHandler);
   
   // Feature routes
   app.use('/pl-api', teamRoutes);
