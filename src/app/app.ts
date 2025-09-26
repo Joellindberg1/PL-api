@@ -1,10 +1,15 @@
 import express from 'express';
 import { getApiInfo } from '../lib/apiInfo';
 import teamRoutes from '../features/teams/routes';
+import metadataRoutes from '../features/metadata/routes';
 import { errorHandler } from './middleware/errorHandler';
+import { configureApp } from './middleware/appConfig';
 
 export const createApp = () => {
   const app = express();
+
+  // Application configuration
+  configureApp(app);
 
   // Middleware
   app.use(express.json());
@@ -12,11 +17,12 @@ export const createApp = () => {
   // API Documentation endpoints
   app.get("/", (_req, res) => {
     const apiData = getApiInfo();
-    res.set('Content-Type', 'application/json');
-    res.send(JSON.stringify(apiData, null, 2));
+    res.json(apiData);
   });
+  
   // Feature routes
-  app.use('/api', teamRoutes);
+  app.use('/pl-api', teamRoutes);
+  app.use('/pl-api', metadataRoutes);
 
   // Error handling middleware (must be last)
   app.use(errorHandler);
