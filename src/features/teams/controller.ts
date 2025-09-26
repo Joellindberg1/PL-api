@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { TeamService } from './service';
 import { asyncHandler } from '@/app/middleware/errorHandler';
 import { ValidationError } from '@/shared/errors';
+import { logger } from '@/app/middleware/logger';
 
 export class TeamController {
   private teamService: TeamService;
@@ -11,7 +12,7 @@ export class TeamController {
   }
 
   getAllTeams = asyncHandler(async (req: Request, res: Response) => {
-    console.log("Controller: Getting all teams...");
+    logger.controllerAction('GET /pl-api/teams');
     const teams = await this.teamService.getAllTeams();
 
     res.json({
@@ -22,7 +23,7 @@ export class TeamController {
   });
 
   getTeamsList = asyncHandler(async (req: Request, res: Response) => {
-    console.log("Controller: Getting minimal teams list...");
+    logger.controllerAction('GET /pl-api/teams/list');
     const teams = await this.teamService.getTeamsList();
 
     res.json({
@@ -37,7 +38,7 @@ export class TeamController {
       throw new ValidationError("Invalid team ID format");
     }
 
-    console.log(`Controller: Getting team by ID: ${id}`);
+    logger.controllerAction('GET /pl-api/teams/:id');
     const team = await this.teamService.getTeamById(id);
     res.json({
       success: true,
